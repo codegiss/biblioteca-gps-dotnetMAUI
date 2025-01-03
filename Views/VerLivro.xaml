@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Biblioteca.Views.VerLivro"
+             xmlns:viewModels="clr-namespace:Biblioteca.ViewModels"
+             Title="{Binding NomeLivro}">
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="10" >
+        <HorizontalStackLayout
+            Spacing="10"
+            HorizontalOptions="End">
+            <Button
+                Text="Editar"
+                Clicked="OnEditarClicked"
+                FontSize="18"/>
+            <Button
+                Text="Deletar"
+                Clicked="OnDeletarClicked"
+                FontSize="18"/>
+        </HorizontalStackLayout>
+        
+        <Label 
+            Text="{Binding NomeLivro, StringFormat='Nome: {0}'}"
+            FontSize="18" />
+        <Label 
+            Text="{Binding ISBN, StringFormat='ISBN: {0}'}"
+            FontSize="18" />
+        <Label 
+            Text="{Binding NomeAutor, StringFormat='Nome autor(a): {0}'}"
+            FontSize="18" />
+        <Label 
+            Text="{Binding EmailAutor, StringFormat='E-mail autor(a): {0}'}"
+            FontSize="18" />
+    </VerticalStackLayout>
+</ContentPage>

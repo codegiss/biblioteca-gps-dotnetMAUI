@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Biblioteca.ViewModels"
+             x:Class="Biblioteca.Views.EditarLivro"
+             Title="{Binding NomeLivro, StringFormat='Editar {0}'}">
+    <VerticalStackLayout>
+        <HorizontalStackLayout
+            Spacing="15"
+            Padding="10">
+            <Label 
+                Text="Nome do livro:"
+                FontSize="20"
+                VerticalOptions="Start" 
+                HorizontalOptions="Start" />
+            <Entry
+                MaxLength="40"
+                FontSize="20"
+                Text="{Binding NomeLivro}"
+                x:Name="entryNomeLivro"
+                />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout
+            Spacing="15"
+            Padding="10">
+            <Label 
+                Text="ISBN:"
+                FontSize="20"
+                VerticalOptions="Start" 
+                HorizontalOptions="Start" />
+            <Entry
+                MaxLength="13"
+                FontSize="20"
+                x:Name="entryISBN"
+                Placeholder="13 números"
+                Text="{Binding ISBN}"
+                IsEnabled="False" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout
+            Spacing="15"
+            Padding="10">
+            <Label 
+                Text="Nome do autor:"
+                FontSize="20"
+                VerticalOptions="Start" 
+                HorizontalOptions="Start" />
+            <Entry
+                MaxLength="20"
+                FontSize="20"
+                x:Name="entryNomeAutor"
+                Text="{Binding NomeAutor}"
+                TextChanged="EntriesChanged"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout
+            Spacing="15"
+            Padding="10">
+            <Label 
+                Text="Email do autor:"
+                FontSize="20"
+                VerticalOptions="Start" 
+                HorizontalOptions="Start" />
+            <Entry
+                MaxLength="20"
+                FontSize="20"
+                x:Name="entryEmailAutor"
+                Text="{Binding EmailAutor}"
+                TextChanged="EntriesChanged"/>
+        </HorizontalStackLayout>
+        <Button
+            Text="Salvar"
+            x:Name="btnSalvar"
+            Clicked="OnSalvarClicked"
+            IsEnabled="False"
+            HorizontalOptions="Center"/>
+    </VerticalStackLayout>
+</ContentPage>
